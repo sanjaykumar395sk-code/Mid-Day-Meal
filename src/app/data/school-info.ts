@@ -2,19 +2,19 @@ import { SchoolInfo } from '../models/school-info.model';
 
 export const SCHOOL_INFO: SchoolInfo = {
 
-    schoolName: 'Government High School',
+    schoolName: 'Government High School, Baskal.',
 
-    schoolCode: 'GHPS-1001',
+    schoolCode: ' 29170618602',
 
     village: 'Baskal',
 
     taluk: 'Chikamaglur',
 
-    district: 'Chikkamagaluru',
+    district: 'Chikamaglur',
 
     state: 'Karnataka',
 
-    pincode: '577548',
+    pincode: '577132',
 
     academicYear: '2026 - 2027',
 
