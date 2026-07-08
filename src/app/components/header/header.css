@@ -1,0 +1,59 @@
+.app-header {
+  background: #0c56c5;
+  color: #fff;
+  padding: 0.25rem 0.5rem;   /* reduced vertical padding */
+}
+
+.logo-img {
+  height: 45px;              /* slightly smaller default */
+  width: auto;               /* keep aspect ratio */
+  margin-right: 0.25rem;      /* reduced spacing */
+}
+
+.scheme-title {
+  font-weight: 600;
+  line-height: 1.1;           /* tighter line spacing */
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.75rem;               /* reduced gap between items */
+  align-items: center;        /* vertically center button */
+}
+
+.nav-item {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+}
+
+/* Style for Home button */
+.nav-btn {
+  background: #fff;
+  color: #0c56c5;
+  border: none;
+  border-radius: 4px;
+  padding: 0.2rem 0.6rem;     /* slightly smaller padding */
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background: #e6e6e6;
+}
+
+/* Responsive logo scaling */
+@media (max-width: 768px) {
+  .logo-img {
+    height: 38px;             /* smaller on mobile */
+  }
+}
+
+@media (min-width: 769px) {
+  .logo-img {
+    height: 55px;             /* balanced size on larger screens */
+  }
+}
