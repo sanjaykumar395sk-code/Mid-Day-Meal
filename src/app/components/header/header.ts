@@ -14,7 +14,7 @@ export class Header {
 
   constructor(private router: Router) {
     this.router.events.subscribe(() => {
-      this.isHomePage = this.router.url === '/home' || this.router.url === '/';
+      this.isHomePage = this.router.url === '/mid-day-meal-scheme/home' || this.router.url === '/';
     });
   }
 }

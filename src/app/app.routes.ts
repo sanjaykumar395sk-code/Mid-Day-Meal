@@ -5,19 +5,19 @@ import { MealCalculator } from './pages/meal-calculator/meal-calculator';
 export const routes: Routes = [
     {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'mid-day-meal-scheme/home',
     pathMatch: 'full'
   },
   {
-    path: 'home',
+    path: 'mid-day-meal-scheme/home',
     component: Home
   },
   {
-    path: 'mid-day-meal-scheme',
+    path: 'mid-day-meal-scheme/calculator',
     component: MealCalculator
   },
   {
     path: '**',
-    redirectTo: 'home'
+    redirectTo: 'mid-day-meal-scheme/home'
   }
 ];
