@@ -18,7 +18,7 @@
           "builder": "@angular/build:application",
           "options": {
             "outputPath": "docs",
-            "baseHref": "/mid-day-meal-scheme/",
+            "baseHref": "/Mid-Day-Meal/",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
