@@ -1,0 +1,22 @@
+<header class="app-header">
+  <div class="container d-flex align-items-center justify-content-between">
+    <!-- Left Logo -->
+    <div class="logo d-flex align-items-center">
+      <img src="/images/mid-day-meal-logo.jpg" alt="Government Emblem" class="logo-img">
+      <span class="scheme-title">
+        Mid-Day Meal Scheme <br>
+        <small>Government of Karnataka</small>
+      </span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-links">
+      <!-- Show Home button only when NOT on Home -->
+      <button *ngIf="!isHomePage"
+              routerLink="/home"
+              class="btn btn-light btn-sm nav-btn">
+        Home
+      </button>
+    </nav>
+  </div>
+</header>

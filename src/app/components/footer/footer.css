@@ -1,0 +1,8 @@
+.app-footer {
+  background: #0f172a;
+  color: #fff;
+  padding: 0.25rem;        /* reduced vertical padding */
+  text-align: center;
+  font-size: 0.85rem;      /* slightly smaller text for compactness */
+  line-height: 1.3;        /* tighter line spacing */
+}

@@ -1,0 +1,88 @@
+.calculator-section {
+  padding: 0.5rem 0.25rem;   /* reduced vertical + horizontal padding */
+}
+
+.section-box {
+  background: #f9f9f9;
+  border: 1px solid #ddd;    /* slimmer border */
+  border-radius: 0.5rem;
+  padding: 0.4rem;           /* reduced inner padding */
+  margin-bottom: 0.75rem;    /* less gap between boxes */
+}
+
+.attendance-header {
+  color: #0d3b66;
+  font-weight: bold;
+  margin-bottom: 0.25rem;    /* tighter spacing */
+}
+
+.attendance-date {
+  color: #444;
+  font-weight: 600;
+}
+
+.food-header {
+  color: #2a9d8f;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.table {
+  background: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 0.75rem;    /* reduced bottom spacing */
+}
+
+.table th {
+  background: #eef6ff;
+  color: #1d3557;
+  padding: 0.4rem;           /* compact table cells */
+}
+
+.table td {
+  vertical-align: middle;
+  padding: 0.4rem;
+}
+
+.text-danger {
+  margin-top: 0.2rem;
+}
+
+.is-invalid {
+  border: 1.5px solid red;   /* slightly thinner invalid border */
+}
+
+/* Print styles */
+@media print {
+  button {
+    display: none; /* Hide buttons when printing */
+  }
+  .attendance-date {
+    float: right;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+  }
+
+  .calculator-section {
+    page-break-inside: avoid;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    page-break-inside: avoid;
+    font-size: 13px;
+  }
+
+  th, td {
+    padding: 5px;            /* balanced compact padding */
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 8mm;             /* tighter margins to fit more */
+  }
+}

@@ -1,0 +1,118 @@
+<section class="calculator-section">
+  <div class="container">
+
+    <!-- Attendance Section -->
+    <div class="section-box mb-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="attendance-header">Attendance</h4>
+        <span class="attendance-date">Date: {{ currentDate }}</span>
+      </div>
+
+      <table class="table table-bordered text-center">
+        <thead class="table-light">
+          <tr>
+            <th>Class</th>
+            <th>Total Strength</th>
+            <th>Present</th>
+            <th>Absent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 8th Standard -->
+          <tr>
+            <td>8th Standard</td>
+            <td>{{ totalClass8 }}</td>
+            <td>
+              <input type="text"
+                     [ngModel]="presentClass8"
+                     (ngModelChange)="presentClass8 = sanitizeInput($event, 'class8')"
+                     (blur)="cleanupOnBlur('class8')"
+                     class="form-control text-center"
+                     [ngClass]="{'is-invalid': errorClass8}"
+                     inputmode="numeric"
+                     pattern="[0-9]*">
+              <div *ngIf="errorClass8" class="text-danger small">{{ errorClass8 }}</div>
+            </td>
+            <td>{{ getAbsent(totalClass8, presentClass8) }}</td>
+          </tr>
+
+          <!-- 9th Standard -->
+          <tr>
+            <td>9th Standard</td>
+            <td>{{ totalClass9 }}</td>
+            <td>
+              <input type="text"
+                     [ngModel]="presentClass9"
+                     (ngModelChange)="presentClass9 = sanitizeInput($event, 'class9')"
+                     (blur)="cleanupOnBlur('class9')"
+                     class="form-control text-center"
+                     [ngClass]="{'is-invalid': errorClass9}"
+                     inputmode="numeric"
+                     pattern="[0-9]*">
+              <div *ngIf="errorClass9" class="text-danger small">{{ errorClass9 }}</div>
+            </td>
+            <td>{{ getAbsent(totalClass9, presentClass9) }}</td>
+          </tr>
+
+          <!-- 10th Standard -->
+          <tr>
+            <td>10th Standard</td>
+            <td>{{ totalClass10 }}</td>
+            <td>
+              <input type="text"
+                     [ngModel]="presentClass10"
+                     (ngModelChange)="presentClass10 = sanitizeInput($event, 'class10')"
+                     (blur)="cleanupOnBlur('class10')"
+                     class="form-control text-center"
+                     [ngClass]="{'is-invalid': errorClass10}"
+                     inputmode="numeric"
+                     pattern="[0-9]*">
+              <div *ngIf="errorClass10" class="text-danger small">{{ errorClass10 }}</div>
+            </td>
+            <td>{{ getAbsent(totalClass10, presentClass10) }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Calculate + Total Present + Print -->
+<div class="d-flex justify-content-between align-items-center mt-3">
+  <div>
+    <button class="btn btn-success me-2" (click)="calculateMeals()">Calculate</button>
+    <button class="btn btn-primary" (click)="printPage()">Print</button>
+  </div>
+  <strong>Total Students Present: {{ totalPresent }}</strong>
+</div>
+    </div>
+
+    <!-- Food Items Section -->
+    <div class="section-box">
+      <h3 class="food-header mb-3">Food Items Calculation</h3>
+
+      <div *ngIf="errorClass8 || errorClass9 || errorClass10" class="alert alert-danger">
+        Please correct the attendance inputs above before calculation.
+      </div>
+
+      <table class="table table-bordered text-center">
+        <thead class="table-light">
+          <tr>
+            <th>Sl No</th>
+            <th>Food Item</th>
+            <th>Per Student Qty</th>
+            <th>Total Qty</th>
+            <th>Unit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of results; let i = index">
+            <td>{{ i+1 }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.perStudent }}</td>
+            <td>{{ item.totalQty }}</td>
+            <td>{{ item.unit }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
